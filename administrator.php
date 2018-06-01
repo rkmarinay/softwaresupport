@@ -270,7 +270,7 @@
   <div class="dropdown">
 		<button class="dropbtn">Administrator</button>
 	  <div class="dropdown-content">
-			<a href="login.html">Log Out</a>
+			<a href="index.php">Log Out</a>
 		</div>
 		</div>
 		

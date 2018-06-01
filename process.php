@@ -41,7 +41,7 @@
 		
 		else {
 			echo "Incorrect username/password. Please try again.<br>";
-			echo "<a href='login.html'> Back to Login Page. </a>";
+			echo "<a href='index.php'> Back to Login Page. </a>";
 		}
 		
 ?>
