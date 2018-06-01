@@ -7,7 +7,6 @@
 	<link href="local-fonts/Orbitron/Orbitron.css" rel="stylesheet">   
 	<link href="local-fonts/Open-Sans/Open-Sans.css" rel="stylesheet">
 </head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-ascale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
