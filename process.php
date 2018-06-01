@@ -42,7 +42,7 @@
 		else {
 			echo "Incorrect username/password. Please try again.<br>";
 			echo "<a href='index.php'> Back to Login Page. </a>";
-			print_r($_POST['username']);
+			print_r($_POST['password']);
 		}
 		
 ?>
