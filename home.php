@@ -4,8 +4,6 @@
 <head>
     <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-	<link href="local-fonts/Orbitron/Orbitron.css" rel="stylesheet">   
-	<link href="local-fonts/Open-Sans/Open-Sans.css" rel="stylesheet">
 </head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-ascale=1">
@@ -21,10 +19,7 @@
 
 	<style>
         body{
-
-            font-family: 'open_sans_condensedlight', sans-serif;
             font-size: 20px;
-
         }
         
         .Header{
@@ -37,14 +32,12 @@
         }
         
         .Title{
-			font-family: 'orbitronlight', sans-serif;
 	        font-size: 200%;
 	        top: 108px
         }
         
         .SubTitle{
 	        font-size: 20px;
-	        font-family: 'open_sans_condensedlight', sans-serif;
 	        top: 155px
         }
 		
@@ -60,7 +53,6 @@
 	        border-width: 2px;
 	        border-color: #444;
 	        color: white;
-	        font-family: 'open_sans_condensedlight', sans-serif;
         }
         
         .footer-info{
@@ -179,7 +171,7 @@
 		?>
 		</button>
 	  <div class="dropdown-content">
-			<a href="login.html">Log Out</a>
+			<a href="index.php">Log Out</a>
 		</div>
 		</div>
 		

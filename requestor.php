@@ -3,8 +3,6 @@
 <head>
     <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-	<link href="local-fonts/Orbitron/Orbitron.css" rel="stylesheet">   
-	<link href="local-fonts/Open-Sans/Open-Sans.css" rel="stylesheet">
 </head>
     <?php 
 		session_start();
@@ -15,7 +13,7 @@
         body{
             background: #344e35 ;
             font-family: 'open_sans_condensedlight', sans-serif;
-            font-size: 20px;
+            font-size:18px;
 
         }
         
@@ -23,15 +21,8 @@
             padding-left: 70px;
         }
 		
-        .ServiceTitle{
-	        width: 1290px;
-	        height: 30px;
-	        background-color: #151815;
-			color: white
-        }
-        
-        .Header{
-	        width: 1349px;
+         .Header{
+	        width: 100%;
 	        height: 190px;
 	        background: #151815;
 	        color: white;
@@ -42,30 +33,16 @@
         .Title{
 			font-family: 'orbitronlight', sans-serif;
 	        font-size: 200%;
-	        position: absolute;
-	        left: 530px;
 	        top: 108px
         }
         
         .SubTitle{
-	        position: absolute;
 	        font-size: 20px;
 	        font-family: 'open_sans_condensedlight', sans-serif;
-	        left: 610px;
 	        top: 155px
         }
-
-        .LogIn{
-			position: absolute;
-	        font-size: 20px;
-	        font-family: 'open_sans_condensedlight', sans-serif;
-	        left: 1100px;
-	        top: 155px
-		}
 		
         .logo{
-	        position: absolute;
-	        left: 608px;
 	        top: 10px;
         }
         
@@ -138,7 +115,7 @@
 			float:left;
 			text-align:left;
 			width:100px;
-			margin-left:150px;
+			margin-left:120px;
 			padding-top:5px;
 		} 
 		
@@ -228,6 +205,49 @@
 			background-color: #3e8e41;
 		}	
 		
+		.stat{
+			position:static;
+			float:right;
+			text-align:center;
+			width:120px;
+			margin-right:30px;
+			border-radius:10px;
+			color:white;
+			font-family:Calibri;
+			font-size:20px;
+		}
+		
+		.id{
+			position:static;
+			float:right;
+			text-align:left;
+			width:50px;
+			margin-right:50px;
+		}
+		
+		.date{
+			position:static;
+			float:right;
+			text-align:left;
+			width:100px;
+			margin-right:40px;
+		}
+		
+		.name{
+			position:static;
+			float:right;
+			text-align:left;
+			width:200px;
+			margin-right:20px;
+		}
+		
+		.request{
+			position:static;
+			float:right;
+			text-align:left;
+			width:400px;
+		}
+		
     </style>
     
 <body>
@@ -250,7 +270,7 @@
 		?>
 		</button>
 	  <div class="dropdown-content">
-			<a href="login.html">Log Out</a>
+			<a href="index.php">Log Out</a>
 		</div>
 		</div>
 		
@@ -279,54 +299,25 @@
 		$num_results=mysql_num_rows($result);
 		echo "<i> $num_results request(s) found </i> <br><br>";
 		
-		echo "<div class='row'>";
-		echo "<strong> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;ID &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; Date&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Name &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Status</strong>";
-		echo "</div>";
 		
-		echo "<table>";
 		while($row=mysql_fetch_assoc($result))
 		{	
-			if ($row['status']== 'Disapproved' && $row['ictcstatus']=='Pending')
-			{
-			echo "<div class='delete'>";
-			//edit
-			echo "<a href='editing2.php?id={$row['id']}'> <img src='edit.png' width=24px style='margin-bottom:3px;margin-left:5px'> </a> </div>";
-			}
-			
-			elseif ($row['ssstatus']== 'Queued')
-			{
-			echo "<div class='delete'>";
-			//edit
-			echo "<a href='process7.php?id={$row['id']}'> <img src='checked.png' width=24px style='margin-bottom:3px;margin-left:5px'> </a> </div>";
-			}
-			
-			else
-				{
-			echo "<div class='delete'>";
-			//edit
-			echo "<img src='editt.png' width=24px style='margin-bottom:3px;margin-left:5px'></div>";
-			}
-			
-			echo "<a href='rview.php?id={$row['id']}'style='text-decoration:none;'>";
 			echo "<div class='rows'>";
 			
-			echo "<strong style='color:#f2f2f2;margin-left:10px;font-size:20px'>&#8226;</strong>";
+			if($row['status'] == 'Pending')
+			{
+				echo "<strong style='color:red;margin-left:50px;font-size:20px'></strong>";
+			}
+			else { echo "<strong style='color:#f2f2f2;margin-left:50px;font-size:20px'>&#8226;</strong>";}
 			
-			echo $row['id'];
-			echo "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;".$row['date'];
-			echo "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;".$row['name'];
-			echo "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;".$row['request'];
-			
-			
-			//superior
 			if($row['status'] == 'Pending')
 			{
 			echo "<div class='stat' style='background-color:gray'><strong>".$row['status']."</strong></div>";
 			}
 			
-			if($row['status'] == 'Queued')
+			if($row['status'] == 'Completed')
 			{
-			echo "<div class='stat' style='background-color:#323CDA'><strong>".$row['status']."</strong></div>";
+			echo "<div class='stat' style='background-color:#4CAF50'><strong>".$row['status']."</strong></div>";
 			}
 			
 			if($row['status'] == 'Disapproved')
@@ -334,18 +325,19 @@
 			echo "<div class='stat' style='background-color:#EC3A3A'><strong>".$row['status']."</strong></div>";
 			}
 			
-			if($row['ssstatus']== 'Completed')
+			if($row['status'] == 'Queued')
 			{
-			echo "<div class='stat' style='background-color:#4CAF50'><strong>".$row['status']."</strong></div>";
+			echo "<div class='stat' style='background-color:#323CDA'><strong>".$row['status']."</strong></div>";
 			}
 			
-		
+			echo "<div class='request'>".$row['request']."</div>";
+			echo "<div class='name'>".$row['name']."</div>";
+			echo "<div class='date'>".$row['date']."</div>";
+			echo "<div class='id'>".$row['id']." </div>";
+			echo "</div></a>";
 			$id = $row['id'];
 			
-			echo "</div></a>";
-			
 		}
-		echo "</table>";
 		
 			mysql_close();
 	

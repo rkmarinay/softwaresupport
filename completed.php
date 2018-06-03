@@ -4,8 +4,6 @@
 <head>
     <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-	<link href="local-fonts/Orbitron/Orbitron.css" rel="stylesheet">   
-	<link href="local-fonts/Open-Sans/Open-Sans.css" rel="stylesheet">
 </head>
     
     <style>
@@ -15,8 +13,8 @@
             font-size: 20px;
         }
         
-        .Header{
-	        width: 1349px;
+         .Header{
+	        width: 100%;
 	        height: 190px;
 	        background: #151815;
 	        color: white;
@@ -27,17 +25,17 @@
         .Title{
 			font-family: 'orbitronlight', sans-serif;
 	        font-size: 200%;
-	        position: absolute;
-	        left: 530px;
 	        top: 108px
         }
         
         .SubTitle{
-	        position: absolute;
 	        font-size: 20px;
 	        font-family: 'open_sans_condensedlight', sans-serif;
-	        left: 610px;
 	        top: 155px
+        }
+		
+        .logo{
+	        top: 10px;
         }
 		
 		.LogIn{
@@ -48,11 +46,6 @@
 	        top: 155px
 		}
 		
-        .logo{
-	        position: absolute;
-	        left: 608px;
-	        top: 10px;
-        }
         
         footer{
 	        width: 100%;
@@ -205,7 +198,7 @@
 		<div class="dropdown">
 		<button class="dropbtn">Immediate Superior</button>
 	  <div class="dropdown-content">
-			<a href="login.html">Log Out</a>
+			<a href="index.php">Log Out</a>
 		</div>
 		</div>
 		

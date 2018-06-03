@@ -1,10 +1,12 @@
 <?php
-	
-	$connect=mysqli_init(); //mysqli_ssl_set($connect, NULL, NULL, {ca-cert filename}, NULL, NULL); 
-	mysqli_real_connect($connect, "ictc-softwaresupport.mysql.database.azure.com", "rkmarinay@ictc-softwaresupport", "P@ssw0rd", "softwaresupport", "3306");
+//$con=mysqli_init(); mysqli_ssl_set($con, NULL, NULL, null, NULL, NULL);
+// mysqli_real_connect($con, "oprosys-mysqldbserver.mysql.database.azure.com", "akashil@oprosys-mysqldbserver", "P@ssw0rd", "oprosys","3306");
 
-	mysqli_select_db($connect,"softwaresupport");
-	if (!$connect) {
-    die("Connection failed: " . mysqli_connect_error());
-	}
-?>
+	$hostname='oprosys-mysqldbserver.mysql.database.azure.com';
+	$username='akashil@oprosys-mysqldbserver';
+	$password='P@ssw0rd';
+	$conn=mysql_connect($hostname, $username, $password) 
+		or die ('Error connnecting to mysql');mysql_select_db('oprosys');
+
+ ?>
+

@@ -4,8 +4,6 @@
 <head>
     <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-	<link href="local-fonts/Orbitron/Orbitron.css" rel="stylesheet">   
-	<link href="local-fonts/Open-Sans/Open-Sans.css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
     
@@ -27,14 +25,12 @@
         }
         
         .Title{
-			font-family: 'orbitronlight', sans-serif;
 	        font-size: 200%;
 	        top: 108px
         }
         
         .SubTitle{
 	        font-size: 20px;
-	        font-family: 'open_sans_condensedlight', sans-serif;
 	        top: 155px
         }
 		
@@ -126,7 +122,9 @@
 
 	
 <center>
-<br><br>
+
+<br>
+<i style="color: #5FDE64">SOFTWARE SUPPORT SERVICE</i><br><br>
 
 	<div class="container">
 	
