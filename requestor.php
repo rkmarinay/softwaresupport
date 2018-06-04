@@ -217,6 +217,21 @@
 			font-size:20px;
 		}
 		
+		.enclosed{
+			float:left;
+		}
+		
+		.stattt{
+			text-align:center;
+			margin-left:50px;
+			float:left;
+			width:120px;
+			border-radius:10px;
+			color:white;
+			font-family:Calibri;
+			font-size:20px;
+		}
+		
 		.id{
 			position:static;
 			float:right;
@@ -288,9 +303,12 @@
 <div class="main-body">
 	
 	<br>
-
 	
-	<br>
+	<div class="stattt" style="background-color:#323CDA"> Queued </div> <div class="enclosed"> &ensp;*approved by Immediate Superior </div>
+	<div class="stattt" style="background-color:#E1913C"> Queued </div> <div class="enclosed"> &ensp;*approved by ICTC </div>
+	<div class="stattt" style="background-color:#C3E13C"> Queued </div> <div class="enclosed"> &ensp;*performed by Software Support </div>
+
+	<br><br>
 	<?php
 		include 'dbconnect.inc';
 		
@@ -325,9 +343,19 @@
 			echo "<div class='stat' style='background-color:#EC3A3A'><strong>".$row['status']."</strong></div>";
 			}
 			
-			if($row['status'] == 'Queued')
+			if($row['status'] == 'Queued' && $row['ictcstatus'] == 'Pending')
 			{
 			echo "<div class='stat' style='background-color:#323CDA'><strong>".$row['status']."</strong></div>";
+			}
+			
+			if($row['status'] == 'Queued' && $row['ictcstatus'] == 'Queued' && $row['ssstatus'] == 'Pending')
+			{
+			echo "<div class='stat' style='background-color:#E1913C'><strong>".$row['status']."</strong></div>";
+			}
+			
+			if($row['status'] == 'Queued' && $row['ssstatus'] == 'Queued')
+			{
+			echo "<div class='stat' style='background-color:#C3E13C'><strong>".$row['status']."</strong></div>";
 			}
 			
 			echo "<div class='request'>".$row['request']."</div>";

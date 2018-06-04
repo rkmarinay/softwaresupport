@@ -3,27 +3,19 @@
 <head>
     <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-	<link href="local-fonts/Orbitron/Orbitron.css" rel="stylesheet">   
-	<link href="local-fonts/Open-Sans/Open-Sans.css" rel="stylesheet">
+
 </head>
     
     <style>
         body{
             background: #344e35 ;
             font-family: 'open_sans_condensedlight', sans-serif;
-            font-size: 20px;
+            font-size: 18px;
 
         }
 		
-        .ServiceTitle{
-	        width: 1290px;
-	        height: 30px;
-	        background-color: #151815;
-			color: white
-        }
-        
-        .Header{
-	        width: 1349px;
+       .Header{
+	        width: 100%;
 	        height: 190px;
 	        background: #151815;
 	        color: white;
@@ -32,19 +24,17 @@
         }
         
         .Title{
-			font-family: 'orbitronlight', sans-serif;
 	        font-size: 200%;
-	        position: absolute;
-	        left: 530px;
 	        top: 108px
         }
         
         .SubTitle{
-	        position: absolute;
 	        font-size: 20px;
-	        font-family: 'open_sans_condensedlight', sans-serif;
-	        left: 610px;
 	        top: 155px
+        }
+		
+        .logo{
+	        top: 10px;
         }
 
         .LogIn{
@@ -55,11 +45,6 @@
 	        top: 155px
 		}
 		
-        .logo{
-	        position: absolute;
-	        left: 608px;
-	        top: 10px;
-        }
         
         .main-body{
 	        width: 1300px;
@@ -248,7 +233,7 @@
 	<div class="dropdown">
 		<button class="dropbtn">Administrator</button>
 	  <div class="dropdown-content">
-			<a href="login.html">Log Out</a>
+			<a href="index.php">Log Out</a>
 		</div>
 		</div>
 		
@@ -266,7 +251,7 @@
 	
 	<br>
 
-	
+	<a href="administrator.php" style="text-decoration:none"><button>Reset</button></a><br>
 	<br>
 	<?php
 		include 'dbconnect.inc';
@@ -288,20 +273,20 @@
 		echo "<i> $num_results request(s) found </i> <br><br>";
 		
 		echo "<div class='row'>";
-		echo "<strong> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;ID &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; Date&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Name &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Superior&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; ICTC &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Support</strong>";
+		echo "<strong> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;ID &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; Date&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Name &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Superior&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; ICTC &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Support</strong>";
 		echo "</div>";
 		
 		while($row=mysql_fetch_assoc($result))
 		{	
 			echo "<div class='delete'> <a href='process6.php?id={$row['id']}' style='text-decoration:none;'> <img src='delete.png' width=30px style='margin-bottom:3px'> </a>";
 			//edit
-			echo "<a href='editing.php?id={$row['id']}'> <img src='edit.png' width=24px style='margin-bottom:3px;margin-left:5px'> </a> </div>";
+			echo "</div>";
 			echo "<a href='editing.php?id={$row['id']}'style='text-decoration:none;'>";
 			echo "<div class='rows'>";
 			
 			echo "<strong style='color:#f2f2f2;margin-left:10px;font-size:20px'>&#8226;</strong>";
 			
-			echo "<strong style='margin-left:5px'>".$row['id']."</strong>";
+			echo "<strong>".$row['id']."</strong>";
 			echo "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;".$row['date'];
 			echo "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;".$row['name'];
 			

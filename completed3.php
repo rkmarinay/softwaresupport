@@ -1,25 +1,18 @@
 <!DOCTYPE html>
 <html>
-<title>Software Support Home</title>
+<title>View Request</title>
 <head>
     <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-ascale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <style>
         body{
-
+            background: #344e35 ;
             font-family: 'open_sans_condensedlight', sans-serif;
             font-size: 20px;
-
         }
+        
          .Header{
 	        width: 100%;
 	        height: 190px;
@@ -44,7 +37,14 @@
         .logo{
 	        top: 10px;
         }
-        
+		
+		.LogIn{
+			position: absolute;
+	        font-size: 20px;
+	        font-family: 'open_sans_condensedlight', sans-serif;
+	        left: 1100px;
+	        top: 155px
+		}
         
         footer{
 	        width: 100%;
@@ -62,7 +62,31 @@
 	        margin-top: 0px;
 	        font-size: 80%;
         }
+        
+		.viewreq {
+			width: 800px;
+	        border-style: solid;
+	        border-width: 5px;
+	        border-color: #333;
+	        background: #f2f2f2;
+	        margin-top: 20px;
+	        padding:20px;
+			text-align:left;
+		}
 
+		.inbox{
+			width:60px;
+			height:30px;
+			background-color:#D5D5D5;
+			float:left;
+			margin-left:350px;
+			border: 1px solid #909090;
+		}
+		
+		.inbox:hover{
+		background-color:#909090;
+		}
+		
 		ul {
 			list-style-type: none;
 			margin: 0;
@@ -97,16 +121,6 @@
 			color:black;
 		}
 		
-		body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-		.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-		.fa-anchor,.fa-coffee {font-size:200px}
-		
-		.badge{
-			background-color:#AF2020;
-			color:white;
-			margin-left:20px;
-		}
-
 		.dropbtn {
 			background-color: #4CAF50;
 			color: white;
@@ -117,10 +131,11 @@
 		}
 				
 		.dropdown {
-		position: relative;
-		display: inline-block;
-		float:right;
-	}
+			position: relative;
+			display: inline-block;
+			float:right;
+			font-family: "Montserrat",sans-serif;
+		}
 
 		.dropdown-content {
 			display: none;
@@ -129,6 +144,7 @@
 			min-width: 160px;
 			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 			z-index: 1;
+			font-family: "Montserrat", sans-serif;
 		}
 
 		.dropdown-content a {
@@ -146,19 +162,38 @@
 
 		.dropdown:hover .dropbtn {
 			background-color: #3e8e41;
-		}		
+		}
+		
+		body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+		.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+		.fa-anchor,.fa-coffee {font-size:200px}
+		
+		.block {
+			width: 25%;
+			border: none;
+			background-color: #4CAF50;
+			color: white;
+			padding: 14px 28px;
+			font-size: 16px;
+			cursor: pointer;
+			text-align: center;
+			border-radius: 8px;
+		}
 		
     </style>
- 
+    
 <body>
-
+	
 	<div class="Header">
+		
 		<center ><img src="images/DLSL-logo.png" class="logo" width="100px" height="100px"></center>
+		
 		<center> <div class="Title">ICTC ONLINE </div> </center>
 		<center> <div class="SubTitle">De La Salle Lipa </div> </center>
+		
 	</div>
 	
-	  <div class="dropdown">
+		<div class="dropdown">
 		<button class="dropbtn">Software Support</button>
 	  <div class="dropdown-content">
 			<a href="index.php">Log Out</a>
@@ -171,82 +206,55 @@
 	</ul>
 	</ul>
 
-	<!-- Second Grid -->
-	<div class="w3-row-padding w3-padding-64 w3-container">
-		<div class="w3-content">
-			<div class="w3-row-padding w3-center w3-margin-top">
-				<div class="w3-third">
-				<a href="sshistory.php"> 
-					<div class="w3-card w3-container  w3-button" style="min-height:300px;text-decoration:none">
-					<br><h3>Request History</h3><br>
-					<img src="history.png" style="width:50%">
-					</div>
-				</a>
-				</div>
-				<div class="w3-third">
-				<a href="ssupport.php">
-					<div class="w3-card w3-container w3-button" style="min-height:300px;text-decoration:none">
-					<br><h3>View Requests<span class="badge">
-					
-					<?php
-					include 'dbconnect.inc';
-					
-					$query="SELECT * FROM requests WHERE ictcstatus='Queued' AND ssstatus = 'Pending'";
-					$result=mysql_query($query);
-					$num_results=mysql_num_rows($result);
-					
-					echo $num_results;
-					
-					?>
-					
-					</span></h3>
-					
-					
-					<br>
-					<img src="status.png" style="width:50%">
-					</div>
-				</a>	
-				</div>
-				
-				<div class="w3-third">
-				<a href="completed3.php">
-					<div class="w3-card w3-container w3-button" style="min-height:300px;text-decoration:none">
-					<br><h3>Completed Requests</h3><br>
-					<img src="faqs.png" style="width:60%">
-					</div>
-				</a>
-				</div>
-			</div>
+	
+	<br>
+	<?php
 
-		</div>
-	</div>
+		include 'dbconnect.inc';
 
+		$query="SELECT * FROM requests";
+		$result=mysql_query($query);
+		while($req=mysql_fetch_assoc($result))
+		{
+			echo "<center><div class='viewreq'>";
+	
+			echo "<strong>ID</strong>: ".$req['id'];
+			echo "<strong><br>Date</strong>: ".$req['date'];
+			echo "<strong><br>Name</strong>: ".$req['name'];
+			echo "<strong><br>Contact No:</strong> ".$req['contactno'];
+			echo "<strong><br>Department:</strong> ".$req['department'];
+			echo "<strong><br>Request:</strong> ".$req['request'];
+			echo "<strong><br>Remarks:</strong> ".$req['remarks'];
+			echo "</div></center>";
+		}
+?>
 
-
-</body>
 
 
 <br>
 <footer>
 	
-	<div class="footer-info"><br>
-		<center>
-		<div class="footer-img">
-		<img src="images/footer-img1.png">
-		<img src="images/footer-img2.png">
-		</div>
+	<div class="footer-info">
+		<br>
+	<center>
+	<div class="footer-img">
+	<img src="images/footer-img1.png">
+	<img src="images/footer-img2.png">
+	</div>
 
-		<br>
-		De La Salle Lipa; ICTC<br>
-		1962 JP Laurel National Highway<br>
-		Mataas Na Lupa, Lipa City 4217<br>
-		Tel. No. 63.43.756-5555<br>
-		Telefax: 756-3117<br>
-		© Copyright 2018
-		<br>
-		</center>
+	<br>
+	De La Salle Lipa; ICTC<br>
+	1962 JP Laurel National Highway<br>
+	Mataas Na Lupa, Lipa City 4217<br>
+	Tel. No. 63.43.756-5555<br>
+	Telefax: 756-3117<br>
+	© Copyright 2018
+	<br>
+	</center>
 	</div>
 		
+
 </footer>
 
+</body>
 </html>

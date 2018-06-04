@@ -4,8 +4,7 @@
 <head>
     <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-	<link href="local-fonts/Orbitron/Orbitron.css" rel="stylesheet">   
-	<link href="local-fonts/Open-Sans/Open-Sans.css" rel="stylesheet">
+
 </head>
    
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,15 +18,8 @@
 
         }
         
-        .ServiceTitle{
-	        width: 1290px;
-	        height: 30px;
-	        background-color: #151815;
-			color: white
-        }
-        
         .Header{
-	        width: 1349px;
+	        width: 100%;
 	        height: 190px;
 	        background: #151815;
 	        color: white;
@@ -36,19 +28,17 @@
         }
         
         .Title{
-			font-family: 'orbitronlight', sans-serif;
 	        font-size: 200%;
-	        position: absolute;
-	        left: 530px;
 	        top: 108px
         }
         
         .SubTitle{
-	        position: absolute;
 	        font-size: 20px;
-	        font-family: 'open_sans_condensedlight', sans-serif;
-	        left: 610px;
 	        top: 155px
+        }
+		
+        .logo{
+	        top: 10px;
         }
 
         .LogIn{
@@ -58,12 +48,6 @@
 	        left: 1100px;
 	        top: 155px
 		}
-		
-        .logo{
-	        position: absolute;
-	        left: 608px;
-	        top: 10px;
-        }
         
         .main-body{
 	        width: 1300px;

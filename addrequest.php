@@ -4,8 +4,6 @@
 <head>
     <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-	<link href="local-fonts/Orbitron/Orbitron.css" rel="stylesheet">   
-	<link href="local-fonts/Open-Sans/Open-Sans.css" rel="stylesheet">
 </head>
     <?php 
 		session_start();
@@ -190,7 +188,7 @@
 		?>
 		</button>
 	  <div class="dropdown-content">
-			<a href="login.html">Log Out</a>
+			<a href="index.php">Log Out</a>
 		</div>
 		</div>
 		
